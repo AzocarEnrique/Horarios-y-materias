@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font awesome -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+   <!-- mdb -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet"/>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
+   <!-- bootstrap -->
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   <!-- local -->
+   <link rel="stylesheet" href="style/style.css">
+   <script src="jscript.js"></script>
+   <script type="module" src="login.js"></script>
+   <script type="module" src="perfil.js"></script>
+</head>
+<body>
+    <nav
+           id="main-navbar"
+           class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+           >
+           <a class="navbar-brand" href="index.html">
+            <img
+              src="https://icons-for-free.com/download-icon-HOME-131994911289288683_512.png"
+              height="27"
+              alt="MDB Logo"
+              loading="lazy"
+            />
+          </a>
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#sidebarMenu"
+                  aria-controls="sidebarMenu"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  >
+            <i class="fas fa-bars"></i>
+          </button>
+          <!-- Right links -->
+          <ul class="navbar-nav ms-auto d-flex flex-row">
+            <!-- Notification dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                 class="nav-link me-6 me-lg-3 dropdown-toggle hidden-arrow"
+                 href="#"
+                 id="navbarDropdownMenuLink"
+                 role="button"
+                 data-mdb-toggle="dropdown"
+                 aria-expanded="false"
+                 >
+                <i class="fas fa-bell"></i>
+                <span class="badge rounded-pill badge-notification bg-danger"
+                      >1</span
+                  >
+              </a>
+              <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                  >
+                <li><a class="dropdown-item" href="#">Se avisa que...</a></li>
+              </ul>
+            </li>
+              
+    
+            <!-- Avatar -->
+            <li class="nav-item dropdown">
+              <a
+                 class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+                 href="#"
+                 id="navbarDropdownMenuLink"
+                 role="button"
+                 data-mdb-toggle="dropdown"
+                 aria-expanded="false"
+                 >
+                <img
+                     src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                     class="rounded-circle"
+                     height="22"
+                     alt=""
+                     loading="lazy"
+                     />
+              </a>
+              <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                  >
+                <li><a class="dropdown-item" href="perfil.html">Configuración</a></li>
+                <li><a class="dropdown-item" href="#" id="logout">Cerrar Sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row align-items-center h-100">
+            <div class="">
+              <div class="card mb-3" id="carta">
+                <div class="row g-0">
+                  <div class="col-md-4 gradient-custom text-center text-white" id="columna">
+                    <img src="https://wl-genial.cf.tsp.li/resize/728x/jpg/91b/430/964a9c5ac9933cc012d0bd80be.jpg"
+                      alt="Avatar" class="img-fluid my-5" id="avatars" />
+                    <input id="nombre" type="text" placeholder=""></input>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-4">
+                      <h6>Information</h6>
+                      <hr class="mt-0 mb-4">
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h6>Carrera</h6>
+                          <input class="" id="carrera" type="text" placeholder="">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h6>Semestre</h6>
+                            <input class="" id="semestre" type="text" placeholder="" >
+                        </div>
+                        <div class="col-6 mb-3">
+                          <h6>Rut</h6>
+                          <input class="" id="rut" type="text" placeholder="" >
+                        </div>
+                        <div class="col-6 mb-3">
+                            <h6>Numero</h6>
+                            <input class="" id="numero" type="text" placeholder="" >
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center botonalto">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <button class="btn btn-secondary btn-warning" id="editar" >Editar
+                    </button>
+                    </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <button class="btn btn-secondary btn-success" id="guardar">Guardar
+                    </button>
+                  </div>
+            </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </section> 
+</body>
+</html>

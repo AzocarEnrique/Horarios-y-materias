@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Horario</title>
+   <!-- font awesome -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+   <!-- mdb -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet"/>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
+   <!-- bootstrap -->
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   <!-- local -->
+   <link rel="stylesheet" href="style/style.css">
+   <script type="module" src="jscript.js"></script>
+   <script type="module" src="login.js"></script>
+   <script type="module" src="index.js"></script>
+</head>
+<body>
+   <header>
+      <!-- Sidebar -->
+    
+      <!-- Navbar -->
+      <nav
+           id="main-navbar"
+           class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+           >
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="https://icons-for-free.com/download-icon-HOME-131994911289288683_512.png"
+              height="27"
+              alt="MDB Logo"
+              loading="lazy"
+            />
+          </a>
+          <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#sidebarMenu"
+                  aria-controls="sidebarMenu"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  >
+            <i class="fas fa-bars"></i>
+          </button>
+          <!-- Right links -->
+          <ul class="navbar-nav ms-auto d-flex flex-row">
+            <!-- Notification dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                 class="nav-link me-6 me-lg-3 dropdown-toggle hidden-arrow"
+                 href="#"
+                 id="navbarDropdownMenuLink"
+                 role="button"
+                 data-mdb-toggle="dropdown"
+                 aria-expanded="false"
+                 >
+                <i class="fas fa-bell"></i>
+                <span class="badge rounded-pill badge-notification bg-danger"
+                      >1</span
+                  >
+              </a>
+              <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                  >
+                <li><a class="dropdown-item" href="#">Se avisa que...</a></li>
+              </ul>
+            </li>
+              
+    
+            <!-- Avatar -->
+            <li class="nav-item dropdown">
+              <a
+                 class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+                 href="#"
+                 id="navbarDropdownMenuLink"
+                 role="button"
+                 data-mdb-toggle="dropdown"
+                 aria-expanded="false"
+                 >
+                <img
+                     src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                     class="rounded-circle"
+                     height="22"
+                     alt=""
+                     loading="lazy"
+                     />
+              </a>
+              <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                  >
+                <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+                <li><a class="dropdown-item" href="#" id="logout">Cerrar Sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <main style="margin-top: 58px">
+      <div class="container pt-4">
+    
+      </div>
+    </main>
+	<div class="d-flex justify-content-center">
+		<button type="button" class="btn" data-mdb-toggle="modal" data-mdb-target="#BloqueModal"><i class="fa-solid fa-plus"></i> Agregar bloque</button>
+	</div>
+	
+<div class="cd-schedule loading">
+	<div class="timeline">
+		<ul>
+			<li><span>09:00</span></li>
+			<li><span>09:30</span></li>
+			<li><span>10:00</span></li>
+			<li><span>10:30</span></li>
+			<li><span>11:00</span></li>
+			<li><span>11:30</span></li>
+			<li><span>12:00</span></li>
+			<li><span>12:30</span></li>
+			<li><span>13:00</span></li>
+			<li><span>13:30</span></li>
+			<li><span>14:00</span></li>
+			<li><span>14:30</span></li>
+			<li><span>15:00</span></li>
+			<li><span>15:30</span></li>
+			<li><span>16:00</span></li>
+			<li><span>16:30</span></li>
+			<li><span>17:00</span></li>
+			<li><span>17:30</span></li>
+			<li><span>18:00</span></li>
+		</ul>
+	</div> <!-- .timeline -->
+
+	<div class="events">
+		<ul class="wrap">
+			<li class="events-group" id="cambio">
+				<div class="top-info"><span>Lunes</span></div>
+				<ul id="lunes">
+					<!--
+					<li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
+						<a href="#0" id="firebase-btn">
+							<em class="event-name">Firebase</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2">
+						<a href="#0">
+							<em class="event-name">Javascript</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3">
+						<a href="#0">
+							<em class="event-name">Ingles 3</em>
+						</a>
+					</li>
+					-->
+				</ul>
+				
+			</li>
+
+			<li class="events-group">
+				<div class="top-info"><span>Martes</span></div>
+
+				<ul id="martes">
+					<!--
+					<li class="single-event" data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2">
+						<a href="#0">
+							<em class="event-name">Javascript</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="11:30" data-end="13:00"  data-content="event-restorative-yoga" data-event="event-4">
+						<a href="#0">
+							<em class="event-name">Gestion de la innovación</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="13:30" data-end="15:00" data-content="event-abs-circuit" data-event="event-1">
+						<a href="#0">
+							<em class="event-name">Firebase</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3">
+						<a href="#0">
+							<em class="event-name">Ingles 3</em>
+						</a>
+					</li>
+					-->
+				</ul>
+				
+			</li>
+
+			<li class="events-group">
+				<div class="top-info" ><span>miercoles</span></div>
+
+				<ul id="miercoles">
+					<!--
+					<li class="single-event" data-start="09:00" data-end="10:15" data-content="event-restorative-yoga" data-event="event-4">
+						<a href="#0">
+							<em class="event-name">Gestion de la innovación</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="10:45" data-end="11:45" data-content="event-yoga-1" data-event="event-3">
+						<a href="#0">
+							<em class="event-name">Ingles 3</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="12:00" data-end="13:45"  data-content="event-rowing-workout" data-event="event-2">
+						<a href="#0">
+							<em class="event-name">Javascript</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="13:45" data-end="15:00" data-content="event-yoga-1" data-event="event-3">
+						<a href="#0">
+							<em class="event-name">Ingles 3</em>
+						</a>
+					</li>
+					-->
+				</ul>
+				
+			</li>
+
+			<li class="events-group">
+				<div class="top-info" ><span>Jueves</span></div>
+
+				<ul id="jueves">
+					<!--
+					<li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
+						<a href="#0">
+							<em class="event-name">Firebase</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="12:00" data-end="13:45" data-content="event-restorative-yoga" data-event="event-4">
+						<a href="#0">
+							<em class="event-name">Gestion de la innovación</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="15:30" data-end="16:30" data-content="event-abs-circuit" data-event="event-1">
+						<a href="#0">
+							<em class="event-name">Firebase</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="17:00" data-end="18:30"  data-content="event-rowing-workout" data-event="event-2">
+						<a href="#0">
+							<em class="event-name">Javascript</em>
+						</a>
+					</li>
+					-->
+				</ul>
+				
+			</li>
+
+			<li class="events-group">
+				<div class="top-info" ><span>Viernes</span></div>
+
+				<ul id="viernes">
+					<!--
+					<li class="single-event" data-start="00:00" data-end="00:00"  data-content="event-rowing-workout" data-event="event-2">
+						<a href="#0">
+							<em class="event-name">Javascript</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-1">
+						<a href="#0">
+							<em class="event-name">Firebase</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3">
+						<a href="#0">
+							<em class="event-name">Ingles 3</em>
+						</a>
+					</li>
+					-->
+				</ul>
+			</li>
+        
+      <li class="events-group">
+				<div class="top-info" ><span>Sabado</span></div>
+
+				<ul id="sabado">
+					<!--
+					<li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
+						<a href="#0">
+							<em class="event-name">Firebase</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2">
+						<a href="#0">
+							<em class="event-name">Javascript</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3">
+						<a href="#0">
+							<em class="event-name">Ingles 3</em>
+						</a>
+					</li>
+					-->
+				</ul>
+				
+			</li>
+       
+      
+      <!--        -->
+      <li class="events-group">
+				<div class="top-info" ><span>Domingo</span></div>
+				
+				<ul id="domingo">
+					<!--
+					
+
+					<li class="single-event" data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2">
+						<a href="#0">
+							<em class="event-name">Javascript</em>
+						</a>
+					</li>
+
+					<li class="single-event" data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3">
+						<a href="#0">
+							<em class="event-name">Ingles 3</em>
+						</a>
+					</li>
+				</ul>
+				-->
+			</li>
+         
+		</ul>
+		
+	</div>
+	<div class="modal fade" id="BloqueModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">Registrar bloque de horario</h5>
+                    <button type="button" class="fa-solid fa-xmark" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="block-form" class="form-group row">
+						<!-- materia input -->
+                        
+                        <div class="form-outline mb-3">
+							<h3>Materia</h3>
+                            <input type="text" id="materia" class="col-sm-12 col-form-label"
+                            placeholder="Ingresa la materia" required />
+                        </div>
+                        <!-- Carrera input -->
+                        
+                        <div class="form-outline mb-3">
+							<h3>Carrera</h3>
+                            <input type="text" id="carrera" class="col-sm-12 col-form-label"
+                            placeholder="Ingresa tu carrera" required />
+                        </div>
+                
+                        <!-- semestre input -->
+                        <div class="form-outline mb-3">
+							<h3>Semestre</h3>
+                            <input type="text" id="semestre" class="col-sm-12 col-form-label"
+                            placeholder="Ingresa tu semestre" required />
+                        </div>        
+						<!-- dia input -->
+                        <div class="form-outline mb-3">
+							<h3>Dia</h3>
+                            <input type="text" id="dia" class="col-sm-12 col-form-label"
+                            placeholder="Ingresa el dia" required />
+                        </div>  
+						<!-- Inicio input -->
+                        <div class="form-outline mb-3">
+							<h3>Hora de Inicio</h3>
+                            <input type="text" id="inicio" class="col-sm-12 col-form-label"
+                            placeholder="Ingresa la hora de inicio" required />
+                        </div>     
+						<!-- fin input -->
+                        <div class="form-outline mb-3">
+							<h3>Hora de finalizacion</h3>
+                            <input type="text" id="fin" class="col-sm-12 col-form-label"
+                            placeholder="Ingresa la hora de termino" required />
+                        </div>            
+                        <!--Button Submit-->
+                        <div class="modal-footer">
+                            <div class="form-outline mb-3">
+                                <button type="submit" class="btn btn-primary" data-mdb-dismiss="modal" aria-label="Close">Guardar</button>
+                            </div> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div>
+		<div class="event-modal mod-mat">
+			<header class="header" id="contenido">
+				<div class="content">
+					<span class="event-date"></span>
+					<h3 class="event-name"></h3>
+				</div>
+			 
+				<div class="header-bg">
+				
+			 </div>
+			</header>
+	
+			<div class="body">
+				
+				<div class="event-info">
+					<!-- Ejemplo para mostrar -->
+					<h3 class="text-center text-danger display-5">Ingenieria Civil en Informatica</h3>
+					<br>
+					<p class="text-center text-secondary display-6">Semestre XI</p>
+					<br>
+					<p class="text-center display-6"> Dia Lunes </p>
+					<div class="row">
+						<div class="col-6 align-items-center">
+							<div class="ini"><p class="text-center">Inicio</p></div><br>
+							<span>Horario: <input type="text" placeholder="9:30"></span>
+						</div>
+						<div class="col-6">
+							<div class="ini"><p class="text-center">Fin</p></div><br>
+							<div class="span12 text-center"><input type="text" placeholder="10:30"></div>
+						</div>
+						<div class="col-4 botones-pop">
+							<a class="btn btn-secondary btn-success" href="materia.html">Editar<br>Materia</a>
+						</div>
+						<div class="col-4 botones-pop">
+							<button class="btn btn-secondary btn-warning" id="CambioMateria">Cambiar<br>Materia</a>
+						</div>
+						<div class="col-4 botones-pop">
+							<button class="btn btn-secondary btn-danger">Eliminar<br>Bloque</a>
+						</div>
+					</div>
+				</div>
+			 
+				<div class="body-bg">
+					
+	
+	
+				</div>
+			</div>
+	
+			<a href="#0" class="close">Close</a>
+		</div>
+	
+		<div class="cover-layer"></div>
+	</div>
+	
+</div> <!-- .cd-schedule -->
+
+    
+
+</body>
+</html>
+   
+<!------ Include the above in your HEAD tag ---------->
+
