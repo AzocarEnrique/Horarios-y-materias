@@ -1,5 +1,5 @@
-import { saveUser, bd} from "./login.js";
-import {getDocs, collection} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
+import { saveUser, q1, editUser, bd} from "./login.js";
+import { onSnapshot, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
 
 const nombre = document.getElementById("nombre")
 const carrera = document.getElementById("carrera")
@@ -15,6 +15,7 @@ semestre.disabled=true
 rut.disabled=true
 numero.disabled=true
 editar.innerHTML='Editar'
+//console.log(sessionStorage.id)
 editar.addEventListener('click', (e) => {
     e.preventDefault();
     nombre.disabled=false
@@ -26,8 +27,16 @@ editar.addEventListener('click', (e) => {
     editar.disabled=true
     guardar.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log('usuario guardado')
-        saveUser(nombre.value, carrera.value, semestre.value, rut.value, numero.value)
+
+        if(!q1._path.segments[2]){
+            saveUser(nombre.value, carrera.value, semestre.value, rut.value, numero.value)
+            console.log('save user')
+        }
+        else{
+            console.log(carrera)
+            editUser(sessionStorage.id, carrera.value, nombre.value, numero.value, rut.value, semestre.value)
+            console.log('edit user')
+        }
         guardar.disabled=true
         editar.disabled=false
         nombre.disabled=true 
@@ -37,14 +46,21 @@ editar.addEventListener('click', (e) => {
         rut.disabled=true
         numero.disabled=true 
     })
-
-    /*getDocs(collection(bd, "Usuario")).then((querySnapshot) => {
-        querySnapshot.forEach(doc => {
-            
-        });
-    })
-    addEventListener('click', (e) => {  
-
-    })*/
     console.log("Editar")
+<<<<<<< HEAD
 }) 
+=======
+})
+onSnapshot(q1, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        nombre.placeholder=doc.data().nombre
+        carrera.placeholder=doc.data().carrera
+        semestre.placeholder=doc.data().semestre
+        rut.placeholder=doc.data().rut
+        numero.placeholder=doc.data().numero
+        sessionStorage.id=doc._key.path.segments[8]
+        //console.log(sessionStorage.id)
+        //console.log(doc)
+    }); 
+});
+>>>>>>> c8cece5cc5a8810a666e6db5ae6092eccb4d0914
