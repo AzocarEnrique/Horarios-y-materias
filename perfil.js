@@ -47,4 +47,4 @@ editar.addEventListener('click', (e) => {
 
     })*/
     console.log("Editar")
-})
+}) 
